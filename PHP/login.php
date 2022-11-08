@@ -1,47 +1,35 @@
 
 <?php 
 
-    require "configDB.php";
-    require "header.php";
+    require "header.php";  
 
+    session_start();
+
+    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == TRUE){
+
+        header("Location: /PHP/profile.php");
+    }
 
 ?>
 
 <div class="login">
-    <h1>Inicio de sesion</h1>
-    <form method="post">
-        <div class = "username">
-            <input type="text" required>
-            <label>Nombre de usuario</label>
-        <div class="contraseña">
-            <input type="password" required>
-            <label>Contraseña</label>
-        </div>
-        
-        <input type="submit" value="Iniciar">
+<h1>INICIAR SESION</h1>
+<form action="functions/f_login.php" method="post">
 
-        </div>
-    </form>
+    <div class = "username">
+
+        <input type="text" name="user" required>
+        <label>Nombre de usuario</label>
+
+    <div class="contraseña">
+
+        <input type="password"  name="pass" required>
+        <label>Contraseña</label>
+
+    </div>
+
+    <input type="submit" value="Login">
+
+    </div>
+</form>
 </div>
-
-
-
-<div class="signin">
-    <h1>Registrarse</h1>
-    <form method="post">
-        <div class = "username">
-            <input type="text" required>
-            <label>Nombre de usuario</label>
-        <div class="contraseña">
-            <input type="password" required>
-            <label>Contraseña</label>
-
-        </div>
-        
-        <input type="submit" value="Registrar">
-
-        </div>
-    </form>
-</div>
-
-
