@@ -4,30 +4,34 @@
 require('db.php');
 session_start();
 
-
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
 	$username = $_POST["user"];
 	$password = $_POST["pass"];
 
 
-    $query = "SELECT pass FROM `users` WHERE username='$username'";
+    $query = "SELECT userID, pass FROM `users` WHERE username='$username'";
 
     $result = mysqli_query($con,$query);
 
     if($result->num_rows > 0  ){
 
 
-        $pass = mysqli_fetch_array($result)[0];  
+        $result = mysqli_fetch_array($result);  
+        $id = $result[0];
+        $pass = $result[1];
 
         if($pass==$password ){
            
             session_regenerate_id();
             $_SESSION['loggedin'] = TRUE;
             $_SESSION['username'] = $username;
+            $_SESSION['id'] = $id;
 
 
-            echo "<h3>Bienvenido '$username', iniciaste sesion correctamente.</h3>";
+            echo "<script>
+            window.location.href='/PHP/';
+            </script>";
 
         }
 

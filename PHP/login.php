@@ -3,8 +3,6 @@
 
     require "header.php";  
 
-    session_start();
-
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == TRUE){
 
         header("Location: /PHP/profile.php");
@@ -29,6 +27,8 @@
     </div>
 
     <input type="submit" value="Login">
+
+    <a href="/PHP/register.php">Registrarse </a>
 
     </div>
 </form>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-11-2022 a las 03:35:57
+-- Tiempo de generación: 15-11-2022 a las 00:20:59
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.11
 
@@ -60,6 +60,7 @@ CREATE TABLE `relpeliculas` (
 --
 
 CREATE TABLE `reluser` (
+  `id` int(11) NOT NULL,
   `userId` int(10) NOT NULL,
   `followerId` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -90,8 +91,16 @@ CREATE TABLE `users` (
   `saldo` int(11) DEFAULT NULL,
   `cantFollows` int(11) DEFAULT NULL,
   `cantFollowers` int(11) DEFAULT NULL,
-  `description` text COLLATE utf8_unicode_ci DEFAULT NULL
+  `descripcion` text COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `users`
+--
+
+INSERT INTO `users` (`userID`, `userName`, `pass`, `saldo`, `cantFollows`, `cantFollowers`, `descripcion`) VALUES
+(1, 'admin', 'admin', 100, 0, 0, 'Esta es mi descripcion'),
+(46, 'test', 'test', 100, 0, 0, '');
 
 -- --------------------------------------------------------
 
@@ -125,6 +134,7 @@ ALTER TABLE `relpeliculas`
 -- Indices de la tabla `reluser`
 --
 ALTER TABLE `reluser`
+  ADD PRIMARY KEY (`id`),
   ADD KEY `userId` (`userId`,`followerId`),
   ADD KEY `followerId` (`followerId`);
 
@@ -139,7 +149,8 @@ ALTER TABLE `reviews`
 -- Indices de la tabla `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`userID`);
+  ADD PRIMARY KEY (`userID`),
+  ADD UNIQUE KEY `userName` (`userName`);
 
 --
 -- Indices de la tabla `wishlist`
@@ -153,10 +164,16 @@ ALTER TABLE `wishlist`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `reluser`
+--
+ALTER TABLE `reluser`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
+
+--
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `userID` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `userID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- Restricciones para tablas volcadas
