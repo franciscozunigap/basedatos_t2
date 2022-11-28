@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-11-2022 a las 00:20:59
--- Versión del servidor: 10.4.21-MariaDB
--- Versión de PHP: 8.0.11
+-- Tiempo de generación: 28-11-2022 a las 02:55:24
+-- Versión del servidor: 10.4.25-MariaDB
+-- Versión de PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `blockbusm`
+-- Base de datos: `bd`
 --
 
 -- --------------------------------------------------------
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `movies` (
   `id` int(10) NOT NULL,
+  `titulo` varchar(100) DEFAULT NULL,
   `genre` text NOT NULL,
   `description` text NOT NULL,
   `movDisp` int(11) NOT NULL,
@@ -41,6 +42,17 @@ CREATE TABLE `movies` (
   `starsUsm` int(1) NOT NULL,
   `img` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `movies`
+--
+
+INSERT INTO `movies` (`id`, `titulo`, `genre`, `description`, `movDisp`, `movTotal`, `public`, `time`, `price`, `actors`, `starsMed`, `starsUsm`, `img`) VALUES
+(0, 'El conjuro', 'Terror', 'The Conjuring (también conocida como The Warren Files, titulada Expediente Warren: The Conjuring en España y El conjuro en Hispanoamérica) es una película estadounidense de terror de 2013 dirigida por James Wan y protagonizada por Vera Farmiga y Patrick Wilson en el papel de los parapsicólogos Lorraine y Ed Warren.2​ La película es la segunda más exitosa de la saga (después de La Monja), recaudando un total de $319,5 millones contra un presupuesto de $20 millones.\r\n\r\nLa película está basada en un caso inspirado en la realidad, que habría tenido lugar en una granja, en donde una familia empieza a ser testigo de fenómenos paranormales.3​', 0, 0, 'R', '02:00:00', 10000, 'Patrick Wilson, Vera Farmiga, Ron Livingston, Lili Taylor', 7, 0, '/IMG/movies/the_conjuring.jpg'),
+(1, 'Harry potter y la piedra filosofal', 'Fantasia', 'Un día cerca del undécimo cumpleaños de Harry Potter, un chico huérfano, comienza a percibir extraños acontecimientos a su alrededor, los cuales alcanzan su punto máximo cuando unas cartas enviadas desde el Colegio Hogwarts de Magia y Hechicería llegan a la casa donde vive con sus tíos. Las cartas destapa los secretos que sus tíos le escondieron durante toda su vida: sus padres fueron magos y un mago tenebroso –lord Voldemort– los asesinó en una época de guerra encarnizada, por lo que Harry es un mago de la misma manera y deberá comenzar sus estudios como tal en esa escuela. Para este fin, Dumbledore, le muestra la fortuna monetaria que le dejaron sus padres. Escoltado por el guardabosques del colegio, Rubeus Hagrid, Harry parte rumbo al colegio de magos donde se esconde un antiguo objeto legendario, la piedra filosofal. Al lado de los que se volverían sus mejores amigos, Ron Weasley y Hermione Granger, Harry intenta convencer a sus profesores de que la piedra puede ser robada por el profesor Severus Snape, lo cual es negado por los últimos pues afirman que se encuentra en un lugar seguro y protegido. Durante las aventuras, el protagonista averigua más sobre su verdadero pasado.', 0, 0, 'PG', '02:32:00', 7000, 'Daniel Radcliffe, Rupert Grint, Emma Watson, Robbie Coltrane, Ralph Fiennes, Michael Gambon, Alan Rickman, Tom Felton', 7, 0, '/IMG/movies/harry_potter_piedra_filosofal.jfif'),
+(2, 'Rapido y furioso', 'Acción', 'En la cuidad de Los Ángeles, el corredor de autos y ex convicto Dominic Toretto se vuelve sospechoso ante la policía de ser el responsable de una serie de robos a trailer llenos de costosos artefactos electrónicos, que se llevan a cabo de noche en la carretera. El oficial Brian O’Conner debe de meterse de infiltrado en el mundo de las carreras ilegales, y específicamente en el grupo de confianza de Toretto, para obtener pruebas de que es culpable y apresarlo. Pero las carreras se vuelven demasiado atractivas para Brian, además de que empieza a dejar de sospechar de Toretto y a enamorarse de su hermana, Mia. Ahora que Brian se ha ganado la confianza de Toretto, deberá decidir de qué lado está su lealtad: de lado del mundo de las carreras ilegales y los autos modificados o del lado de la ley. Rápido y furioso trae a la pantalla un mundo de autos modificados donde el límite de velocidad no existe.', 0, 0, 'PG', '01:46:00', 8000, 'Vin Diesel Paul Walker, Michelle Rodríguez, Jordana Brewster, Rick Yune', 6, 0, '/IMG/movies/rapido_y_furioso.jfif'),
+(4, 'Atrapame si puedes', 'Drama', 'Atrápame si puedes (Catch Me If You Can, en la versión original en inglés) es una película biográfica estadounidense de comedia dramática criminal de 2002, basada en la vida de Frank Abagnale Jr., que antes de cumplir diecinueve años consiguió millones de dólares haciéndose pasar por piloto de una empresa aérea, por médico y por abogado. Su principal modus operandi era la falsificación de cheques, delito en el que logró tanta habilidad y experiencia que el FBI finalmente lo reclutó como asesor en ese tipo de fraudes. Steven Spielberg dirigió la película, y fueron protagonistas Leonardo DiCaprio como Abagnale; Tom Hanks como el policía Carl Hanratty; Christopher Walken como su padre, Amy Adams como su prometida, Martin Sheen como su futuro suegro y Nathalie Baye como su madre.', 0, 0, 'PG', '02:21:00', 8000, 'Leonardo DiCaprio, Tom Hanks, Christopher Walken, Amy Adams\r\n', 8, 0, '/IMG/movies/atrapame_si_puedes.jfif'),
+(5, 'club de la pelea', 'Drama', 'Un empleado de oficina insomne, harto de su vida, se cruza con un vendedor peculiar. Ambos crean un club de lucha clandestino como forma de terapia y, poco a poco, la organización crece y sus objetivos toman otro rumbo.', 0, 0, 'PG', '02:18:00', 8000, 'Edward Norton, Brad Pitt, Helena Bonham Carter, Meat Loaf, Jared Leto', 9, 0, '/IMG/movies/club_de_la_pelea.jfif');
 
 -- --------------------------------------------------------
 
@@ -121,7 +133,9 @@ CREATE TABLE `wishlist` (
 -- Indices de la tabla `movies`
 --
 ALTER TABLE `movies`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `titulo` (`titulo`),
+  ADD KEY `titulo_2` (`titulo`);
 
 --
 -- Indices de la tabla `relpeliculas`
