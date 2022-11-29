@@ -36,7 +36,7 @@ else {
     <ul class="navbar-nav mr-auto">
 
       <li class="nav-item">
-        <a class="nav-link" href="/PHP/">Inicio</a>
+        <a class="nav-link" href="/PHP/index.php">Inicio</a>
       </li>
 
 
@@ -63,7 +63,7 @@ else {
 
         else {
             
-            echo "<li class='nav-item'><a class='nav-link' href='/PHP/login.php'> Login </a></li>";
+            echo "<li class='nav-item'><a class='nav-link' href='PHP/login.php'> Login </a></li>";
         }
 
         ?>
