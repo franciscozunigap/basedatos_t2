@@ -22,8 +22,8 @@ else {
 
 
 <nav class="navbar navbar-expand-lg navbar-dark  bg-dark">
-    <a class="navbar-brand" href="/PHP/">
-        <img src="/../IMG/logo.png"  class="logo" >
+    <a class="navbar-brand" href="index.php">
+        <img src="../IMG/logo.png"  class="logo" >
     </a>
 
 
@@ -36,7 +36,7 @@ else {
     <ul class="navbar-nav mr-auto">
 
       <li class="nav-item">
-        <a class="nav-link" href="/PHP/index.php">Inicio</a>
+        <a class="nav-link" href="index.php">Inicio</a>
       </li>
 
 
@@ -52,9 +52,9 @@ else {
               $username
             </a>
             <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
-              <a class='dropdown-item' href='/PHP/profile.php?id=$id'>Mi perfil</a>
+              <a class='dropdown-item' href='profile.php?id=$id'>Mi perfil</a>
               <div class='dropdown-divider'></div>
-              <a class='dropdown-item' href='/PHP/logout.php'>Logout</a>
+              <a class='dropdown-item' href='logout.php'>Logout</a>
             </div>  
     
           </li>'";
@@ -63,7 +63,7 @@ else {
 
         else {
             
-            echo "<li class='nav-item'><a class='nav-link' href='PHP/login.php'> Login </a></li>";
+            echo "<li class='nav-item'><a class='nav-link' href='login.php'> Login </a></li>";
         }
 
         ?>

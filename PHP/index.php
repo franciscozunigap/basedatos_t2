@@ -27,13 +27,34 @@
         <iframe width="560" height="315" src="https://www.youtube.com/embed/uAQFxn2Ss84?start=3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
+    </div> 
+
+    <div class= "Todas">
+        <p>
+
+            Todas las peliculas
+
+        <p>
+
+    </div> 
+
+
+    <a href="movie.php">
+        <img src="/IMG/movies/atrapame_si_puedes.jfif">
+    </a>
+    
+
+    <div class="movies">
+        <p>
+            
+            aqui todas
+
+        <p>
+
     </div>
 
-    //pedir dentro de un ciclo todas las peliculas de la bd y armar un filtro
-    <div class="movies" 
             
-    
-    ></div>
+            
 
 
     <style>
@@ -47,6 +68,12 @@
         }
 
         .text1{
+            font-family: 'Franklin Gothic Medium';
+            display: flex;
+            justify-content: center;
+        }
+
+        .todas{
             font-family: 'Franklin Gothic Medium';
             display: flex;
             justify-content: center;

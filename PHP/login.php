@@ -5,7 +5,7 @@
 
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == TRUE){
 
-        header("Location: /PHP/profile.php");
+        header("Location: profile.php");
     }
 
 ?>
@@ -28,7 +28,7 @@
 
     <input type="submit" value="Login">
 
-    <a href="/PHP/register.php">Registrarse </a>
+    <a href="register.php">Registrarse </a>
 
     </div>
 </form>
